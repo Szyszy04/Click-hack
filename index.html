@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"  v-show="isVisible">
+        <div class="text">
+            <p class="textBefore">Get ready</p>
+            <p class="textWin disable">Hack successful</p>
+            <p class="textLoss disable">Hack failed</p>
+        </div>
+        <div class="main disable">
+            <p>Find the sequence and crack the password</p>
+            <div class="answers">
+                <div v-for="(part, partIndex) in answersParts" :key="partIndex" class="answersPart">
+                  {{ part }}
+                </div>
+              </div>
+              <div class="center">
+                <div v-for="(item, index) in elements" :key="index" class="element" @click="toggleActive(index)">
+                  <hr class="hr-top">
+                  {{ item }}
+                  <hr class="hr-bottom">
+                </div>
+              </div>   
+        </div>
+        <div class="bottomProgres">
+                <div class="progres">
+                    <div class="bar" style="--duration: 2;"></div>
+                </div>
+                <div class="progressBar disable" :style="{ '--duration': animationDuration }">
+                    <div class="bar"></div>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

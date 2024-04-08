@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'IBMPlexSans';
+    src: url('IBMPlexSans-Regular.ttf');
+}
+
+@keyframes roundtime {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+body {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+}
+
+#app{
+    width: 31rem;
+    height: 35.25rem;
+    display: grid;
+    justify-items: center;
+    border-radius: 0.625rem;
+    gap: 15.9375rem;
+    background: #191729;
+    font-family: 'IBMPlexSans';
+}
+
+.text{
+    top: 16rem;
+    position: relative;
+}
+
+.text p, .main p{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3125rem;
+    text-align: center;
+    color: #FFFFFF;
+    user-select: none;
+}
+
+.main p{
+    margin: 1.5rem;
+}
+
+.answers{
+    height: 1.875rem;
+    display: flex;
+    justify-content: center;
+}
+
+.answersPart{
+    user-select: none;
+    letter-spacing: 0.0625rem;
+    margin: 0 0.25rem 0 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.875rem;
+    height: 1.8125rem;
+    border-radius: 0.1875rem;
+    border: 0.10625rem solid #F1E0C533;
+    color: #F1E0C5;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3125rem;
+    text-align: center;
+}
+
+.answersPart.active{
+    color: #27EF8F;
+    border: 0.10625rem solid #27EF8F33;
+}
+
+.center{
+    width: 25.625rem;
+    height: 25.375rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.element{
+    user-select: none;
+    margin: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.9375rem;
+    text-align: center;
+    color: #7045DC;
+    cursor: pointer;
+}
+
+.element hr{
+    display: none;
+}
+
+.element.active{
+    background: #7045DC26;
+    flex-direction: column;
+}
+
+.element.active hr{
+    width: 1.875rem;
+    border: 0.03125rem solid #6C60B9;
+    border-radius: 0.3125rem;
+    display: block;
+    position: relative;
+}
+
+.element.active .hr-top{
+    top: 0.375rem;
+}
+
+.element.active .hr-bottom{
+    bottom: 0.375rem;
+}
+
+.bottomProgres{
+    bottom: -6rem;
+    position: relative;
+}
+
+.bottomProgres.game{
+    bottom: 15rem;
+}
+
+.progres, .progressBar {
+    width: 25rem;
+    height: 0.625rem;
+    border-radius: 0.1875rem;
+    background: #3C3762;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 0.1875rem;
+    background: #8578E9;
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+    transform-origin: left center;
+}
+
+.disable{
+    display: none !important;
+}
